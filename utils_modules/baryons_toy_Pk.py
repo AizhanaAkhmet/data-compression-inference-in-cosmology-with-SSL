@@ -19,8 +19,8 @@ def generate_params(size,
         np.random.seed(seed)
     
     # get the values of the parameters/labels
-    A  = (0.9*np.random.random(size)+0.1)
-    B  = -1.0 + 1.0*np.random.random(size)
+    A  = A_min + (A_max - A_min)*np.random.random(size) #(0.9*np.random.random(size)+0.1)
+    B  = B_min + (B_max - B_min)*np.random.random(size) #-1.0 + 1.0*np.random.random(size)
     
     A = A[:, None].repeat(splits, axis = 0).flatten()
     B = B[:, None].repeat(splits, axis = 0).flatten()
@@ -29,10 +29,10 @@ def generate_params(size,
     params = [A, B]
     if predict_D:
         if only_cosmic_var:
-            D  = -0.5 + np.random.random(size)
+            D  = D_min + (D_max - D_min)*np.random.random(size) #-0.5 + np.random.random(size)
             D  = D[:, None].repeat(splits, axis = 0).flatten()
         else:    
-            D  = -0.5 + np.random.random(size*splits)
+            D  = D_min + (D_max - D_min)*np.random.random(size*splits) #-0.5 + np.random.random(size*splits)
         C  = A*kpivot**(B - D)
         if not Pk_continuous:
             C = alpha*C
