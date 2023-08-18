@@ -1,6 +1,5 @@
 # Data Compression and Inference in Cosmology with Self-Supervised Machine Learning (SSL)
-This repository contains the code used for the paper "Compression of Cosmological Data and Inference with Self-Supervised
-Machine Learning" submitted to the ICML 2023 Workshop on Machine Learning for Astrophysics and "Data Compression and Inference in Cosmology with Self-Supervised Machine Learning" (in preparation).
+This repository contains the code used for the paper "Data Compression and Inference in Cosmology with Self-Supervised Machine Learning" (in preparation). 
 
 ## Software dependencies and datasets
 This code uses `numpy`, `scipy`, `matplotlib`, `scikit-learn`, and `pytorch` packages. 
